@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "name": "Calculadora",
+    "description": "Extensão Calculadora",
+    "author": "Bernardo Lopes",
+    "browser_action": {
+   	 "default_title": "Calculadora",
+   	 "default_popup": "index.html",
+   	 "default_icon": "img/icon.png"
+    }
+}
