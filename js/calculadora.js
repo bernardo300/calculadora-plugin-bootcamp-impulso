@@ -24,32 +24,39 @@ var btn0 = document.querySelector('#btn0');
 var btnPonto = document.querySelector('#btnPonto');
 var btnIgual = document.querySelector('#btnIgual');
 
-btn0.addEventListener('click', clicarNumeros);
-btn1.addEventListener('click', clicarNumeros);
-btn2.addEventListener('click', clicarNumeros);
-btn3.addEventListener('click', clicarNumeros);
-btn4.addEventListener('click', clicarNumeros);
-btn5.addEventListener('click', clicarNumeros);
-btn6.addEventListener('click', clicarNumeros);
-btn7.addEventListener('click', clicarNumeros);
-btn8.addEventListener('click', clicarNumeros);
-btn9.addEventListener('click', clicarNumeros);
+btn0.addEventListener('click', handlerAddExpressionvisor);
+btn1.addEventListener('click', handlerAddExpressionvisor);
+btn2.addEventListener('click', handlerAddExpressionvisor);
+btn3.addEventListener('click', handlerAddExpressionvisor);
+btn4.addEventListener('click', handlerAddExpressionvisor);
+btn5.addEventListener('click', handlerAddExpressionvisor);
+btn6.addEventListener('click', handlerAddExpressionvisor);
+btn7.addEventListener('click', handlerAddExpressionvisor);
+btn8.addEventListener('click', handlerAddExpressionvisor);
+btn9.addEventListener('click', handlerAddExpressionvisor);
+btnDivisao.addEventListener('click', handlerAddExpressionvisor)
+btnMultiplicacao.addEventListener('click', handlerAddExpressionvisor)
+btnMenos.addEventListener('click', handlerAddExpressionvisor)
+btnMais.addEventListener('click', handlerAddExpressionvisor)
+btnIgual.addEventListener('click', handlerKeyEqual)
+
 window.addEventListener('load', () => {
   visor.focus();
 });
-function clicarNumeros(ev) {
-  visor.value = visor.value + ev.target.textContent;
 
-  console.log(ev.target.textContent);
-}
-
-function clicarOpercao(ev) {
-  visor.value = visor.value + ev.target.textContent;
-}
-
-function clicarTeclas(ev) {
-  console.log(ev.target.textContent);
-}
 visor.addEventListener('keyup', (ev) => {
-  console.log(ev.key);
+  visor.value = visor.value + ev.target.textContent;
 });
+
+btnLimpar.addEventListener('click', ()=>{
+  visor.value = ''
+})
+function handlerAddExpressionvisor(ev) {
+  visor.value = visor.value + ev.target.textContent;
+}
+
+
+function handlerKeyEqual(ev) {
+  let expression = visor.value.replaceAll('x','*');
+  visor.value = eval(expression)
+}
