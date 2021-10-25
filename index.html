@@ -5,45 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="css/calculadora.css" />
   </head>
+  <!--prettier-ignore-->
   <body>
-    <div class="flex">
-      <input class="visor" type="text" />
+    <div class="calculadora">
+      <div class="flex">
+        <input class="visor form-control" type="text" placeholder="0"/>
+      </div>
+
+      <div class="flex">
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnLimpar"
+        >AC</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnPorcentagem"
+        >%</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnSinal"
+        >+/-</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnDivisao"
+        >/</button>
+      </div>
+      <div class="flex">
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn7">7</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn8">8</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn9">9</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnMultiplicacao"
+        >x</button>
+      </div>
+
+      <div class="flex">
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn4">4</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn5">5</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn6">6</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnMenos"
+        >-</button>
+      </div>
+
+      <div class="flex">
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn1">1</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn2">2</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn3">3</button>
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btnMais">+</button>
+      </div>
+
+      <div class="flex">
+        <button class="item btn btn-dark btn-lg font-weight-light" id="btn0">0</button>
+        <button
+          class="item btn btn-dark btn-lg font-weight-light"
+          id="btnPonto"
+        >.</button>
+        <button
+          class="item-big btn btn-dark btn-lg font-weight-light"
+          id="btnIgual"
+        >=</button>
+      </div>
     </div>
 
-    <div class="flex">
-      <button class="item" id="btnLimpar">AC</button>
-      <button class="item" id="btnPorcentagem">%</button>
-      <button class="item" id="btnSinal">+/-</button>
-      <button class="item" id="btnDivisao">/</button>
-    </div>
-    <div class="flex">
-      <button class="item" id="btn7">7</button>
-      <button class="item" id="btn8">8</button>
-      <button class="item" id="btn9">9</button>
-      <button class="item" id="btnMultiplicacao">x</button>
-    </div>
-
-    <div class="flex">
-      <button class="item" id="btn4">4</button>
-      <button class="item" id="btn5">5</button>
-      <button class="item" id="btn6">6</button>
-      <button class="item" id="btnMenos">-</button>
-    </div>
-
-    <div class="flex">
-      <button class="item" id="btn1">1</button>
-      <button class="item" id="btn2">2</button>
-      <button class="item" id="btn3">3</button>
-      <button class="item" id="btnMais">+</button>
-    </div>
-
-    <div class="flex">
-      <button class="item" id="btn0">0</button>
-      <button class="item" id="btnPonto">.</button>
-      <button class="item-big" id="btnIgual">=</button>
-    </div>
     <script src="js/calculadora.js"></script>
   </body>
 </html>

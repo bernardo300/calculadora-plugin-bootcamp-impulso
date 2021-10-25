@@ -34,29 +34,36 @@ btn6.addEventListener('click', handlerAddExpressionvisor);
 btn7.addEventListener('click', handlerAddExpressionvisor);
 btn8.addEventListener('click', handlerAddExpressionvisor);
 btn9.addEventListener('click', handlerAddExpressionvisor);
-btnDivisao.addEventListener('click', handlerAddExpressionvisor)
-btnMultiplicacao.addEventListener('click', handlerAddExpressionvisor)
-btnMenos.addEventListener('click', handlerAddExpressionvisor)
-btnMais.addEventListener('click', handlerAddExpressionvisor)
-btnIgual.addEventListener('click', handlerKeyEqual)
+btnDivisao.addEventListener('click', handlerAddExpressionvisor);
+btnMultiplicacao.addEventListener('click', handlerAddExpressionvisor);
+btnMenos.addEventListener('click', handlerAddExpressionvisor);
+btnMais.addEventListener('click', handlerAddExpressionvisor);
+btnIgual.addEventListener('click', handlerKeyEqual);
 
 window.addEventListener('load', () => {
   visor.focus();
 });
 
 visor.addEventListener('keyup', (ev) => {
+  if (ev.target.textContent === '=') {
+    let expression = visor.value.replaceAll('x', '*');
+    calcular(expression);
+    return;
+  }
   visor.value = visor.value + ev.target.textContent;
 });
 
-btnLimpar.addEventListener('click', ()=>{
-  visor.value = ''
-})
+btnLimpar.addEventListener('click', () => {
+  visor.value = '';
+});
 function handlerAddExpressionvisor(ev) {
   visor.value = visor.value + ev.target.textContent;
 }
 
-
-function handlerKeyEqual(ev) {
-  let expression = visor.value.replaceAll('x','*');
-  visor.value = eval(expression)
+function handlerKeyEqual() {
+  let expression = visor.value.replaceAll('x', '*');
+  calcular(expression);
+}
+function calcular(expression) {
+  visor.value = eval(expression);
 }
