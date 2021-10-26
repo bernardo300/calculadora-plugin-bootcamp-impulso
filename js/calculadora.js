@@ -34,6 +34,7 @@ btn6.addEventListener('click', handlerAddExpressionvisor);
 btn7.addEventListener('click', handlerAddExpressionvisor);
 btn8.addEventListener('click', handlerAddExpressionvisor);
 btn9.addEventListener('click', handlerAddExpressionvisor);
+btnPonto.addEventListener('click', handlerAddExpressionvisor);
 btnDivisao.addEventListener('click', handlerAddExpressionvisor);
 btnMultiplicacao.addEventListener('click', handlerAddExpressionvisor);
 btnMenos.addEventListener('click', handlerAddExpressionvisor);
@@ -45,7 +46,8 @@ window.addEventListener('load', () => {
 });
 
 visor.addEventListener('keyup', (ev) => {
-  if (ev.target.textContent === '=') {
+  if (ev.key == '=' || ev.key == 'Enter') {
+    visor.value = visor.value.replaceAll('=', '');
     let expression = visor.value.replaceAll('x', '*');
     calcular(expression);
     return;
